@@ -1,0 +1,43 @@
+<html>
+<script type='text/javascript' src='knockout-2.3.0.js'></script>
+<script type='text/javascript' src='jquery-2.0.3.min.js'></script>
+<script type='text/javascript' src='model.js'></script>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div>
+<a href="" data-bind="click: showLotteri">lotteri</a>
+<a href="" data-bind="click: showConfig">config</a>
+<div class="tallinfo">
+Tall 1:
+ <span data-bind='text: min'></span>-<span data-bind='text: max'></span>
+Tall 2: <span data-bind='text: min2'></span>-<span data-bind='text: max2'></span>
+</div>
+</div>
+<div data-bind="visible: lotteri, click: keyPress" class="lotteri">
+<div class="numbers">
+<span class="number" data-bind='text: number'></span>
+<span class="number2" data-bind='text: number2'></span>
+</div>
+</div>
+<div data-bind="visible: config">
+<div class="config1">
+<p><strong>Tall 1</strong></p>
+<p>Minste tall <input data-bind='value: min' /></p>
+<p>St&oslashrste tall <input data-bind='value: max' /></p>
+<p>Aktiv: <input type="checkbox" data-bind="checked: aktiv" /></p>
+</div>
+<div class="config2">
+<p><strong>Tall 2</strong></p>
+<p>Minste tall <input data-bind='value: min2' /></p>
+<p>St&oslashrste tall <input data-bind='value: max2' /></p>
+<p>Aktiv: <input type="checkbox" data-bind="checked: aktiv2" /></p>
+</div>
+<div class="randominfo">
+<input type="radio" name="randomGroup" value="rnd" data-bind="checked: randomPicker" /> Hente tall fra random.org
+<input type="radio" name="randomGroup" value="jsc" data-bind="checked: randomPicker" /> Bruke javascript Math.random (hvis man mangler nett)
+</div>
+</div>
+</body>
+</html>

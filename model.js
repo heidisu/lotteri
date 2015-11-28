@@ -28,23 +28,6 @@ function adjustCss(num2aktiv){
     }
 }
 
-ko.bindingHandlers.onEnter = {
-    init: function(element, valueAccessor) {
-        var value = valueAccessor();
-        $(element).keypress(function(event) {
-            var keyCode = (event.which ? event.which : event.keyCode);
-            if (keyCode === 13) {
-                value.call(this);
-                return false;
-            }
-            return true;
-        });
-    },
-    update: function(element, valueAccesor) {
-
-    }
-};
-
 var viewModel = function(){
     this.lotteri = ko.observable(true),
     this.config = ko.observable(false),

@@ -1,11 +1,8 @@
-// http://www.random.org/integers/?num=1&min=1&max=6&col=1&base=10&format=plain&rnd=new
-
 function httpGet(min, max){
-    var url = 'http://www.random.org/integers/?num=1&min='+min+'&max='+max+'&col=1&base=10&format=plain&rnd=new';
-    var xmlHttp = null;
-    xmlHttp = new XMLHttpRequest();
+    var url = 'https://www.random.org/integers/?num=1&min='+min+'&max='+max+'&col=1&base=10&format=plain&rnd=new';
+    var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", url, false );
-    xmlHttp.send( null );
+    xmlHttp.send();
     return xmlHttp.responseText;
 }
 
